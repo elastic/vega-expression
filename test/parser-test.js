@@ -60,19 +60,14 @@ tape('Parser should allow literal regular expressions', function(test) {
     regex: { pattern: 'a', flags: ''}
   });
   // Empty regex
-  test.deepEqual(parse('//')(), {
-    type: 'Literal',
-    value: {},
-    raw: '/(?:)/',
-    regex: { pattern: '', flags: ''}
-  });
+  test.throws(parse('//'));
   test.doesNotThrow(parse('/[0-9]+/gi'));
   test.doesNotThrow(parse('/a\\u{41}/u'));
   test.throws(parse('/a\\u{110000}/u'));
 
   test.doesNotThrow(parse('/a/gimuy'));
 
-  // test.throws(parse('/a/a')); // TODO
+  test.throws(parse('/a/a'));
   test.throws(parse('/a/\\u0067'));
   test.throws(parse('/unterminated'));
   test.throws(parse('/unterminated\n'));

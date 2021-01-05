@@ -75,7 +75,7 @@ export default function(opt) {
       },
 
     BinaryExpression: function(n) {
-        return '(' + visit(n.left) + n.operator + visit(n.right) + ')';
+      return  '(' + visit(n.left) + ' ' + n.operator + ' ' + visit(n.right) + ')';
       },
 
     UnaryExpression: function(n) {
