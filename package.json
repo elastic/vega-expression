@@ -1,6 +1,6 @@
 {
-  "name": "vega-expression",
-  "version": "2.4.0",
+  "name": "@elastic/vega-expression",
+  "version": "2.4.0-kibana",
   "description": "Vega expression parser and code generator.",
   "keywords": [
     "vega",
